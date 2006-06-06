@@ -1,0 +1,13 @@
+"ifa.aic" <-
+function(output)
+{
+k<-output$L 
+p<-nrow(output$H)
+ni<-output$ni
+h<-p*k+p+(3*sum(ni)-k )                     
+pen<-2*h
+lik<-output$l[length(output$l)]
+bic<--2*lik+pen
+return(bic) 
+}
+

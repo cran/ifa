@@ -1,0 +1,7 @@
+import(mvtnorm)
+export(ifa.em,
+        ifa.aic,
+        ifa.bic,
+        ifa.predict,
+        ifa.init.pca,
+        ifa.init.random)
