@@ -3,6 +3,7 @@ ifa.em.alg<-function(y,numobs,L,numvar,ni,totni,maxni,it,H,w,mu,vu,eps,psi,lik)
 likelihood<-NULL
 hh<-0
 ratio<-1000
+H.dep<-NULL
 
 while ((hh < it) & (ratio > eps )) {
  hh<-hh+1 
@@ -124,12 +125,29 @@ for (i in 1:L) {
     for (j in 1:numvar)  H[j,i]=H[j,i]*sqrt(sigmascale[i])
    }
 
-temp<-sum(log(pyq%*%t(wq)))/numobs
+temp<-sum(log(pyq%*%t(wq)))
 likelihood<-c(likelihood,temp)
 ratio<-abs((temp-lik)/lik)
-if ((temp < lik) & (hh > 4)) ratio<-eps
+if ((temp < lik) & (hh > 5)) ratio<-eps
 lik<-temp
+
                                     }
-out<-list(H=H,w=w,mu=mu,vu=vu,psi=psi,likelihood=likelihood,sigma=sigma,pqy=pqy,lik=lik)
+
+####### asymptotic standard error
+
+niter<-length(likelihood)
+temp<-(likelihood-likelihood[niter])
+r<-log(temp[-1]/temp[-niter])
+r<-exp(mean(r[1:(niter-2)],na.rm=T))
+
+se.H<-matrix(0,numvar,L)
+for (i in 1:L) se.H[,i]<-sqrt(diag(psi)/(numobs*EExxy[i,i]*(1-r)))
+se.psi<-diag(sqrt(2*diag(psi^2)/(numobs*(1-r))))
+se.mu<- sqrt(vu/(w*numobs*(1-r)))
+se.vu<- sqrt(vu^2/(w*numobs*(1-r)))
+se.w<-sqrt(1/((1-w)*w*numobs*(1-r)))
+std.err<-list(H=se.H,psi=se.psi,mu=se.mu,vu=se.vu,w=se.w)
+                                    
+out<-list(H=H,w=w,mu=mu,vu=vu,psi=psi,likelihood=likelihood,sigma=sigma,pqy=pqy,lik=lik,std.err=std.err)
 return(out)
 }

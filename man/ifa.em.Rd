@@ -40,6 +40,8 @@ $www2.stat.unibo.it \backslash viroli$ in the section Software and Data.}
   \item{L}{The number of factors}
   \item{numvar}{The number of observed variables}
   \item{numobs}{The number of observations}
+  \item{scaling}{A logical value indicating if the data have been scaled before fitting the IFA model}
+  \item{se}{A list containing the asymptotic standard errors for the parameter estimates}
 }
 \references{
 Attias H. (1999), Independent Factor Analysis, Neural Computation, 11, 803--851.
@@ -58,7 +60,7 @@ init.values<-ifa.init.random(memory$x,2)
 fit<-ifa.em(memory$x,c(2,2),it=50,eps=0.0001,init.values)
 
 fit<-ifa.em(memory$x,c(2,2),it=50,eps=0.0001)
-plot(ifa.predict(scale(memory$x),fit))
+plot(ifa.predict(memory$x,fit))
 }
 
 \keyword{multivariate}

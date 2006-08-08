@@ -1,6 +1,6 @@
 \name{ifa.predict}
 \alias{ifa.predict}
-\title{A funtion to predict the latent variables}
+\title{A function to predict the latent variables}
 \description{
  A function to compute the reconstructed factors.
 }

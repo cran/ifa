@@ -39,8 +39,8 @@ mu<-out$mu
 vu<-out$vu
 psi<-out$psi
 psi<-diag(diag(psi))
-likelihood<-matrix(likelihood[!likelihood==0])
+se<-out$std.err
 
-output<-list(H=H,lik=likelihood,w=w,mu=mu,vu=vu,psi=psi,totni=totni,ni=ni,L=L,sigma=sigma,pqy=pqy,numvar=numvar,numobs=numobs,scaling=scaling)
+output<-list(H=H,lik=likelihood,w=w,mu=mu,vu=vu,psi=psi,totni=totni,ni=ni,L=L,sigma=sigma,pqy=pqy,numvar=numvar,numobs=numobs,scaling=scaling,se=se)
 invisible(output)
 }
