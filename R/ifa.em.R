@@ -81,6 +81,6 @@ se.w<-sqrt(1/((1-w)*w*numobs*(1-r)))
 std.err<-list(H=se.H,psi=se.psi,mu=se.mu,vu=se.vu,w=se.w)
 
 
-output<-list(H=H,lik=likelihood,w=w,mu=mu,vu=vu,psi=psi,totni=totni,ni=ni,L=L,sigma=sigma,pqy=pqy,numvar=numvar,numobs=numobs,scaling=scaling,std.err=std.err,init=init)
+output<-list(H=H,lik=likelihood,w=w,mu=mu,vu=vu,psi=psi,totni=totni,ni=ni,L=L,sigma=sigma,pqy=pqy,numvar=numvar,numobs=numobs,scaling=scaling)
 invisible(output)
 }

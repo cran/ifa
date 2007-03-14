@@ -26,7 +26,9 @@ to be normally distributed with diagonal variance matrix \code{Psi} and the fact
 matrix \code{H} is also
 termed as \code{mixing matrix}. The density of each 
 factor is modelled by a mixture of gaussians. The model is fitted by the EM algorithm. 
-The algorithm can be computationally slow in the complex cases.}
+This version can be computationally slow in the complex cases. 
+A faster R package for window which is based on fortran code can be downloaded at the home: 
+www2.stat.unibo.it/viroli in the section Software and Data.}
 \value{A list containing the components:
   \item{H}{The estimated factor loading matrix}
   \item{lik}{The log-likelihood computed at each iteration of the EM algorithm}
@@ -38,17 +40,12 @@ The algorithm can be computationally slow in the complex cases.}
   \item{L}{The number of factors}
   \item{numvar}{The number of observed variables}
   \item{numobs}{The number of observations}
-  \item{scaling}{A logical variable indicating if data have been scaled before performing the EM algorithm}
-  \item{std.err}{A list containing standard errors of the EM estimates}
-  \item{init}{A list containing the initial values (if specified) of the EM algorithm}
 }
 \references{
 Attias H. (1999), Independent Factor Analysis, Neural Computation, 11, 803--851.
 
-
-Montanari A., Calo', D.G., Viroli C. (2005), Independent Factor Discriminant Analysis, 
-Prooceedings of Applied Stochastic Models and Data Analysis, Brest, France, 569-576. 
-Available at \url{www2.stat.unibo.it/viroli}.}
+Montanari A. and Viroli C. (2010), The Independent Factor Analysis 
+approach to latent variable modeling, Statistics, 44, 397--416. 
 }
 \author{Cinzia Viroli}
 

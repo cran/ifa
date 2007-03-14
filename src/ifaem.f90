@@ -299,12 +299,7 @@ deallocate(sigmascale)
 
 
 likelihood(hh)=sum(log(matmul(pyq,transpose(wq))))
-if (hh>10) then 
-             ratio=abs((likelihood(hh)-lik)/lik)
-           else
-           ratio=1000
-endif
-             
+ratio=abs((likelihood(hh)-lik)/lik)
 lik=likelihood(hh)
 
 deallocate(wq)
@@ -339,7 +334,7 @@ temp1=temp(1,1)
 
 prob=((sqrt((2*pi)**k)*sqrt(det_v))**(-1))*exp(temp1)
 
-
+	
 END SUBROUTINE
 
 
