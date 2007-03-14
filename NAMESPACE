@@ -1,6 +1,6 @@
+useDynLib(ifa)
 import(mvtnorm)
 export(ifa.em,
-       ifa.em.alg,
         ifa.aic,
         ifa.bic,
         ifa.predict,

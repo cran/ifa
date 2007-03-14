@@ -25,3 +25,4 @@ psi <- var(xx) - (H %*% t(H))
 
 output<-list(psi=psi,H=H)
 }
+
