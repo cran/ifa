@@ -18,8 +18,8 @@ ifa.aic(output)
 
 
 Viroli, C. (2005). Choosing the number of factors in Independent Factor Analysis model, 
-Metodolo\v{s}ki Zvezki, Advances in Methodology and Statistics, Vol. II, N. 2, 219-229.
-Available at $www2.stat.unibo.it \backslash viroli$.} 
+Metodoloski Zvezki, Advances in Methodology and Statistics, Vol. II, N. 2, 219-229.
+Available at \url{www2.stat.unibo.it/viroli}.} 
 
 
 \author{Cinzia Viroli}

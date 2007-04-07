@@ -7,7 +7,7 @@ ni<-output$ni
 h<-p*k+p+(3*sum(ni)-3*k )                     
 pen<-2*h
 lik<-output$l[length(output$l)]
-bic<--2*lik+pen
-return(bic) 
+aic<--2*lik+pen
+return(aic) 
 }
 
