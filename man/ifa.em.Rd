@@ -28,7 +28,7 @@ termed as \code{mixing matrix}. The density of each
 factor is modelled by a mixture of gaussians. The model is fitted by the EM algorithm. 
 This version can be computationally slow in the complex cases. 
 A faster R package for window which is based on fortran code can be downloaded at the home: 
-www2.stat.unibo.it/viroli in the section Software and Data.}
+$www2.stat.unibo.it/viroli$ in the section Software and Data.}
 \value{A list containing the components:
   \item{H}{The estimated factor loading matrix}
   \item{lik}{The log-likelihood computed at each iteration of the EM algorithm}
